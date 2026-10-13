@@ -1,3 +1,25 @@
+# mode-tdah 🇫🇷
+
+Version française de [i-have-adhd](https://github.com/ayghri/i-have-adhd) pour **Claude Code** et **Cline** : des réponses façonnées pour un lecteur TDAH (action suivante d'abord, étapes numérotées, pas de digressions, durées précises, victoires visibles). Fork MIT, auteur original : Ayoub G.
+
+**Claude Code**
+
+```
+/plugin marketplace add chetana/mode-tdah
+/plugin install mode-tdah@mode-tdah
+touch ~/.claude/.mode-tdah-always   # mode permanent (optionnel)
+```
+
+**Cline CLI**
+
+```
+git clone https://github.com/chetana/mode-tdah.git && bash mode-tdah/plugins/mode-tdah/install-cline.sh
+```
+
+Désactivation : « stop adhd mode » ou « mode normal ». Détails, mise à jour et synchro avec l'amont : [`plugins/mode-tdah/README.md`](plugins/mode-tdah/README.md). Tout ce qui est français vit dans `plugins/mode-tdah/` ; le reste de ce fichier est le README anglais d'origine.
+
+---
+
 <p align="center">
   <img src="./logo.png" alt="i-have-adhd" width="140" />
 </p>
