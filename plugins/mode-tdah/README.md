@@ -1,8 +1,8 @@
 # mode-tdah
 
-Version 100 % française de [i-have-adhd](https://github.com/ayghri/i-have-adhd) : un plugin Claude Code qui façonne les réponses pour un lecteur TDAH (action suivante d'abord, étapes numérotées, pas de digressions, durées précises, victoires visibles).
+Version française de [i-have-adhd](https://github.com/ayghri/i-have-adhd) : un plugin Claude Code qui façonne les réponses pour un lecteur TDAH (action suivante d'abord, étapes numérotées, pas de digressions, durées précises, victoires visibles).
 
-Les fichiers d'origine du dépôt ne sont pas modifiés (sauf `.claude-plugin/marketplace.json`) : tout ce qui est français vit dans `plugins/mode-tdah/`.
+Les consignes et les messages sont en français ; seul le déclencheur « stop adhd mode » reste en anglais (« mode normal » et « arrête le mode adhd » sont aussi acceptés). Les fichiers d'origine du dépôt ne sont pas modifiés (sauf `.claude-plugin/marketplace.json`) : tout ce qui est français vit dans `plugins/mode-tdah/`.
 
 ## Installation (Claude Code)
 
@@ -51,4 +51,4 @@ python3 -m unittest discover -s tests -p 'test_*.py'
 
 ## Licence et attribution
 
-MIT, voir `LICENSE` à la racine. Projet original : Ayoub G. ([@ayghri](https://github.com/ayghri)). Cette version n'est qu'une traduction et un packaging français.
+MIT, voir `LICENSE` dans ce dossier (copie de celui d'upstream). Projet original : Ayoub G. ([@ayghri](https://github.com/ayghri)). Cette version n'est qu'une traduction et un packaging français.
