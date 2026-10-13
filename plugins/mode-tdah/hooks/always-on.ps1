@@ -1,4 +1,4 @@
-# SessionStart hook fallback for Windows PowerShell. Injects the full
+﻿# SessionStart hook fallback for Windows PowerShell. Injects the full
 # mode-tdah ruleset when the user has opted in by creating
 # $CLAUDE_CONFIG_DIR/.mode-tdah-always (default ~/.claude).
 # Never blocks session start: any failure exits 0.
@@ -43,7 +43,11 @@ try {
 
   $banner = 'MODE TDAH ACTIF (permanent). Les règles ci-dessous s''appliquent à chaque réponse. ' +
     '« stop adhd mode » le désactive pour cette session ; supprimer '
-  [Console]::Out.Write($banner + $flagPath + " pour le désactiver définitivement.`n`n" + $body + "`n")
+  $text = $banner + $flagPath + " pour le désactiver définitivement.`n`n" + $body + "`n"
+  $bytes = (New-Object System.Text.UTF8Encoding($false)).GetBytes($text)
+  $stdout = [Console]::OpenStandardOutput()
+  $stdout.Write($bytes, 0, $bytes.Length)
+  $stdout.Flush()
 } catch {
   # Never block session start.
   exit 0
