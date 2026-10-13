@@ -180,5 +180,26 @@ class ClineInstallerTest(unittest.TestCase):
         self.assertEqual(2, self.run_script("--bidon").returncode)
 
 
+class StaticChecksTest(unittest.TestCase):
+    def test_ps1_has_utf8_bom(self):
+        # Windows PowerShell 5 lit un fichier sans BOM en ANSI et abîme les accents.
+        data = (PLUGIN / "hooks" / "always-on.ps1").read_bytes()
+        self.assertTrue(data.startswith(b"\xef\xbb\xbf"))
+        self.assertIn(b"OpenStandardOutput", data)
+
+    def test_skill_structure(self):
+        path = PLUGIN / "skills" / "mode-tdah" / "SKILL.md"
+        text = path.read_text(encoding="utf-8")
+        self.assertRegex(frontmatter(path), r"(?m)^name: mode-tdah$")
+        self.assertEqual([str(i) for i in range(1, 11)],
+                         re.findall(r"(?m)^### (\d+)\. ", text))
+        self.assertRegex(text, r"(?m)^## Quand déroger aux règles$")
+        self.assertRegex(text, r"(?m)^## Vérification avant envoi$")
+        self.assertNotIn("apprêtes", text)
+
+    def test_license_is_shipped(self):
+        self.assertEqual((ROOT / "LICENSE").read_text(), (PLUGIN / "LICENSE").read_text())
+
+
 if __name__ == "__main__":
     unittest.main()
