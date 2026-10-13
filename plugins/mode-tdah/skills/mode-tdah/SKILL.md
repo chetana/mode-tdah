@@ -135,7 +135,7 @@ Déroger quand :
 
 Avant d'envoyer, supprimer :
 
-1. La première phrase si elle annonce ce que tu t'apprêtes à faire.
+1. La première phrase si elle annonce ce qui va être fait.
 2. La dernière phrase si elle demande « autre chose ? » ou récapitule ce qui vient de se passer.
 3. Toute incise « au fait ».
 4. Tout adverbe d'atténuation sans information (« peut-être », « éventuellement »). Garder une atténuation qui porte une vraie incertitude ; la supprimer fabriquerait de la fausse assurance.
